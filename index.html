@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freddy's App Central</title>
+  <meta name="description" content="A curated collection of websites crafted for real businesses by Freddy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap">
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────────── */
+    :root {
+      --bg:          #FAF7F2;
+      --surface:     #FFFFFF;
+      --border:      #E5DDD4;
+      --text:        #1C1510;
+      --muted:       #7A6F68;
+      --accent:      #C05A08;
+      --shadow-sm:   0 1px 3px rgba(28,21,16,.05), 0 1px 2px rgba(28,21,16,.04);
+      --shadow-md:   0 4px 16px rgba(28,21,16,.09), 0 2px 6px rgba(28,21,16,.06);
+      --shadow-lg:   0 12px 40px rgba(28,21,16,.15), 0 4px 12px rgba(28,21,16,.08);
+      --radius:      18px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg:        #0F0D0B;
+        --surface:   #1A1714;
+        --border:    #2C2722;
+        --text:      #EDE8E2;
+        --muted:     #867E77;
+        --accent:    #E07A20;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+        --shadow-md: 0 4px 16px rgba(0,0,0,.45);
+        --shadow-lg: 0 12px 40px rgba(0,0,0,.65), 0 4px 12px rgba(0,0,0,.4);
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg:        #0F0D0B;
+      --surface:   #1A1714;
+      --border:    #2C2722;
+      --text:      #EDE8E2;
+      --muted:     #867E77;
+      --accent:    #E07A20;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.45);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,.65), 0 4px 12px rgba(0,0,0,.4);
+    }
+
+    /* ── RESET ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: baseline;
+      gap: 0.2rem;
+      font-family: 'Fraunces', Georgia, serif;
+    }
+    .logo-by {
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+    .logo-mark {
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent);
+    }
+
+    .count-pill {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 0.28rem 0.7rem;
+    }
+
+    /* ── HERO ───────────────────────────────────────── */
+    .hero {
+      padding: 5.5rem 2rem 4rem;
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-kicker::before,
+    .hero-kicker::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.45;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      text-wrap: balance;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 .highlight {
+      color: var(--accent);
+    }
+
+    .hero-body {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 460px;
+      margin: 0 auto;
+      text-wrap: balance;
+    }
+
+    /* ── GRID ───────────────────────────────────────── */
+    .apps-section {
+      padding: 1.5rem 2rem 6rem;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .app-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: center;
+    }
+
+    /* ── CARD ───────────────────────────────────────── */
+    .app-card {
+      --c:     #888888;
+      --c-bg:  rgba(136,136,136,0.10);
+      flex: 0 0 calc(33.333% - 0.85rem);
+      min-width: 220px;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2.5px;
+      background: var(--c);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .app-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--c);
+    }
+    .app-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .app-card:focus-within {
+      outline: 2px solid var(--c);
+      outline-offset: 3px;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      background: var(--c-bg);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .app-card:hover .card-icon {
+      transform: scale(1.06);
+    }
+
+    .card-cat {
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--c);
+    }
+
+    .card-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.22;
+      color: var(--text);
+    }
+
+    .card-tagline {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--c);
+      margin-top: 0.375rem;
+      transition: gap 0.2s ease;
+      position: relative;
+      z-index: 1;
+    }
+    .app-card:hover .card-cta {
+      gap: 0.65rem;
+    }
+    .card-cta svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .app-card:hover .card-cta svg {
+      transform: translateX(3px);
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 860px) {
+      .app-card {
+        flex: 0 0 calc(50% - 0.65rem);
+      }
+    }
+    @media (max-width: 540px) {
+      .app-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      .apps-section { padding: 1rem 1rem 4rem; }
+      .hero { padding: 3.5rem 1.25rem 2.5rem; }
+      .site-header { padding: 0 1.25rem; }
+    }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .footer-wordmark {
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--accent);
+    }
+    .footer-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── MOTION ─────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .app-card, .app-card::before, .card-icon, .card-cta, .card-cta svg {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="logo" aria-label="Freddy's App Central">
+      <span class="logo-by">Freddy's&nbsp;</span>
+      <span class="logo-mark">App Central</span>
+    </div>
+    <span class="count-pill" aria-label="8 sites">8 Sites</span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-kicker" aria-hidden="true">Built by Freddy</div>
+    <h1>Every client deserves<br>a home <span class="highlight">online.</span></h1>
+    <p class="hero-body">
+      A curated collection of websites crafted for real businesses —
+      from handymen to auto shops, woodcrafters to fruit vendors.
+    </p>
+  </section>
+
+  <!-- APPS GRID -->
+  <main class="apps-section" aria-label="App collection">
+    <div class="app-grid">
+
+      <!-- ① Anibal Handyman -->
+      <a href="https://freddyja.github.io/anibal-handyman/"
+         target="_blank" rel="noopener noreferrer"
+         class="app-card"
+         style="--c:#C97B08;--c-bg:rgba(201,123,8,0.11)"
+         aria-label="Visit Anibal Maldonado Handyman (opens in new tab)">
+        <div class="card-icon" aria-hidden="true">🔧</div>
+        <div class="card-cat">Home Services</div>
+        <div class="card-name">Anibal Maldonado<br>Handyman</div>
+        <p class="card-tagline">Quality Work. Reliable Hands. — Service booking and requests for a trusted local handyman.</p>
+        <span class="card-cta">
+          Visit Site
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+
+      <!-- ② Russ Bogun Auto -->
+      <a href="https://freddyja.github.io/russ-bogun-auto/"
+         target="_blank" rel="noopener noreferrer"
+         class="app-card"
+         style="--c:#1260B8;--c-bg:rgba(18,96,184,0.10)"
+         aria-label="Visit Russ Bogun Auto Repair (opens in new tab)">
+        <div class="card-icon" aria-hidden="true">🚗</div>
+        <div class="card-cat">Automotive</div>
+        <div class="card-name">Russ Bogun<br>Auto Repair</div>
+        <p class="card-tagline">Honest Work. Trusted Hands. — Full-service auto repair in English, Spanish & Portuguese.</p>
+        <span class="card-cta">
+          Visit Site
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+
+      <!-- ③ ArcUp Electrical -->
+      <a href="https://freddyja.github.io/arcup-electrical/"
+         target="_blank" rel="noopener noreferrer"
+         class="app-card"
+         style="--c:#E8640A;--c-bg:rgba(232,100,10,0.10)"
+         aria-label="Visit ArcUp Electrical Services (opens in new tab)">
+        <div class="card-icon" aria-hidden="true">⚡</div>
+        <div class="card-cat">Electrical Services</div>
+        <div class="card-name">ArcUp<br>Electrical</div>
+        <p class="card-tagline">Electrical Work Done Right. — Panel upgrades, EV charger installs, wiring & surge protection.</p>
+        <span class="card-cta">
+          Visit Site
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+
+      <!-- ④ La Paella de Yoansy -->
+      <a href="https://freddyja.github.io/paella-de-yoansy/"
+         target="_blank" rel="noopener noreferrer"
+         class="app-card"
+         style="--c:#B7600A;--c-bg:rgba(183,96,10,0.11)"
+         aria-label="Visit La Paella de Yoansy (opens in new tab)">
+        <div class="card-icon" aria-hidden="true">🥘</div>
+        <div class="card-cat">Food &amp; Catering</div>
+        <div class="card-name">La Paella<br>de Yoansy</div>
+        <p class="card-tagline">Spanish Soul. Cuban Heart. — Authentic handcrafted paella delivered in Spring Hill, FL.</p>
+        <span class="card-cta">
+          Visit Site
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+
+      <!-- ⑤ Fire and Fellowship -->
+      <a href="https://freddyja.github.io/fire-and-fellowship/"
+         target="_blank" rel="noopener noreferrer"
+         class="app-card"
+         style="--c:#C0281C;--c-bg:rgba(192,40,28,0.10)"
+         aria-label="Visit Fire and Fellowship (opens in new tab)">
+        <div class="card-icon" aria-hidden="true">🔥</div>
+        <div class="card-cat">Faith &amp; Community</div>
+        <div class="card-name">Fire and<br>Fellowship</div>
+        <p class="card-tagline">Household &amp; Headship. — Verses and prayers on a man's calling to lead, love, and father well.</p>
+        <span class="card-cta">
+          Visit Site
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+
+      <!-- ⑥ Pedro's Cuban Woodcraft -->
+      <a href="https://freddyja.github.io/pedro-woodcraft/"
+         target="_blank" rel="noopener noreferrer"
+         class="app-card"
+         style="--c:#8B5E3C;--c-bg:rgba(139,94,60,0.11)"
+         aria-label="Visit Pedro's Cuban Woodcraft (opens in new tab)">
+        <div class="card-icon" aria-hidden="true">🪵</div>
+        <div class="card-cat">Custom Woodworking</div>
+        <div class="card-name">Pedro's Cuban<br>Woodcraft</div>
+        <p class="card-tagline">Hecho a mano con amor. — Handcrafted rockers &amp; tables by master carpenter Pedro Fernandez, Brooksville FL.</p>
+        <span class="card-cta">
+          Visit Site
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+
+      <!-- ⑦ Frutas de Yuniert -->
+      <a href="https://freddyja.github.io/frutas-de-yuniert/"
+         target="_blank" rel="noopener noreferrer"
+         class="app-card"
+         style="--c:#2A8A38;--c-bg:rgba(42,138,56,0.10)"
+         aria-label="Visit Frutas de Yuniert (opens in new tab)">
+        <div class="card-icon" aria-hidden="true">🥭</div>
+        <div class="card-cat">Fresh Produce</div>
+        <div class="card-name">Frutas<br>de Yuniert</div>
+        <p class="card-tagline">Sun-ripened tropical fruits delivered fresh — mangoes, coconuts, papaya &amp; more across Miami-Dade.</p>
+        <span class="card-cta">
+          Visit Site
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+
+      <!-- ⑧ Brazilian Açaí -->
+      <a href="https://freddyja.github.io/brazilian-acai/"
+         target="_blank" rel="noopener noreferrer"
+         class="app-card"
+         style="--c:#7B2D8B;--c-bg:rgba(123,45,139,0.10)"
+         aria-label="Visit Brazilian Açaí (opens in new tab)">
+        <div class="card-icon" aria-hidden="true">🫐</div>
+        <div class="card-cat">Food &amp; Beverages</div>
+        <div class="card-name">Brazilian<br>Açaí</div>
+        <p class="card-tagline">Fresh · Natural · Made with Love. — Customizable açaí bowls with fresh fruits &amp; toppings, delivery &amp; pickup.</p>
+        <span class="card-cta">
+          Visit Site
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </span>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <span class="footer-wordmark">Freddy's App Central</span>
+    <span class="footer-note">Eight websites. Built with care. &copy; 2026</span>
+  </footer>
+
+</body>
+</html>
