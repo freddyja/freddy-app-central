@@ -175,6 +175,32 @@
       justify-content: center;
     }
 
+    /* ── CATEGORIES ─────────────────────────────────── */
+    .cat-section { margin-bottom: 3.25rem; }
+    .cat-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-count {
+      margin-left: auto;
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-style: normal;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
     /* ── CARD ───────────────────────────────────────── */
     .app-card {
       --c:     #888888;
@@ -342,7 +368,7 @@
       <span class="logo-by">Freddy's&nbsp;</span>
       <span class="logo-mark">App Central</span>
     </div>
-    <span class="count-pill" aria-label="12 sites">12 Sites</span>
+    <span class="count-pill" aria-label="14 sites">14 Sites</span>
   </header>
 
   <!-- HERO -->
@@ -357,207 +383,225 @@
 
   <!-- APPS GRID -->
   <main class="apps-section" aria-label="App collection">
-    <div class="app-grid">
 
-      <!-- ① Anibal Handyman -->
-      <a href="https://freddyja.github.io/anibal-handyman/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#C97B08;--c-bg:rgba(201,123,8,0.11)"
-         aria-label="Visit Anibal Maldonado Handyman (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">🔧</div>
-        <div class="card-cat">Home Services</div>
-        <div class="card-name">Anibal Maldonado<br>Handyman</div>
-        <p class="card-tagline">Quality Work. Reliable Hands. — Service booking and requests for a trusted local handyman.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
+    <!-- ── HOME & TRADE SERVICES ── -->
+    <div class="cat-section">
+      <h2 class="cat-heading">
+        🔧 Home &amp; Trade Services
+        <span class="cat-count">4 sites</span>
+      </h2>
+      <div class="app-grid">
 
-      <!-- ② Russ Bogun Auto -->
-      <a href="https://freddyja.github.io/russ-bogun-auto/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#1260B8;--c-bg:rgba(18,96,184,0.10)"
-         aria-label="Visit Russ Bogun Auto Repair (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">🚗</div>
-        <div class="card-cat">Automotive</div>
-        <div class="card-name">Russ Bogun<br>Auto Repair</div>
-        <p class="card-tagline">Honest Work. Trusted Hands. — Full-service auto repair in English, Spanish & Portuguese.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
+        <a href="https://freddyja.github.io/anibal-handyman/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#C97B08;--c-bg:rgba(201,123,8,0.11)"
+           aria-label="Visit Anibal Maldonado Handyman (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">🔧</div>
+          <div class="card-cat">Home Services</div>
+          <div class="card-name">Anibal Maldonado<br>Handyman</div>
+          <p class="card-tagline">Quality Work. Reliable Hands. — Service booking and requests for a trusted local handyman.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
 
-      <!-- ③ ArcUp Electrical -->
-      <a href="https://freddyja.github.io/arcup-electrical/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#E8640A;--c-bg:rgba(232,100,10,0.10)"
-         aria-label="Visit ArcUp Electrical Services (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">⚡</div>
-        <div class="card-cat">Electrical Services</div>
-        <div class="card-name">ArcUp<br>Electrical</div>
-        <p class="card-tagline">Electrical Work Done Right. — Panel upgrades, EV charger installs, wiring & surge protection.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
+        <a href="https://freddyja.github.io/russ-bogun-auto/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#1260B8;--c-bg:rgba(18,96,184,0.10)"
+           aria-label="Visit Russ Bogun Auto Repair (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">🚗</div>
+          <div class="card-cat">Automotive</div>
+          <div class="card-name">Russ Bogun<br>Auto Repair</div>
+          <p class="card-tagline">Honest Work. Trusted Hands. — Full-service auto repair in English, Spanish &amp; Portuguese.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
 
-      <!-- ④ La Paella de Yoansy -->
-      <a href="https://freddyja.github.io/paella-de-yoansy/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#B7600A;--c-bg:rgba(183,96,10,0.11)"
-         aria-label="Visit La Paella de Yoansy (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">🥘</div>
-        <div class="card-cat">Food &amp; Catering</div>
-        <div class="card-name">La Paella<br>de Yoansy</div>
-        <p class="card-tagline">Spanish Soul. Cuban Heart. — Authentic handcrafted paella delivered in Spring Hill, FL.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
+        <a href="https://freddyja.github.io/arcup-electrical/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#E8640A;--c-bg:rgba(232,100,10,0.10)"
+           aria-label="Visit ArcUp Electrical Services (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">⚡</div>
+          <div class="card-cat">Electrical Services</div>
+          <div class="card-name">ArcUp<br>Electrical</div>
+          <p class="card-tagline">Electrical Work Done Right. — Panel upgrades, EV charger installs, wiring &amp; surge protection.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
 
-      <!-- ⑤ Fire and Fellowship -->
-      <a href="https://freddyja.github.io/fire-and-fellowship/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#C0281C;--c-bg:rgba(192,40,28,0.10)"
-         aria-label="Visit Fire and Fellowship (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">🔥</div>
-        <div class="card-cat">Faith &amp; Community</div>
-        <div class="card-name">Fire and<br>Fellowship</div>
-        <p class="card-tagline">Household &amp; Headship. — Verses and prayers on a man's calling to lead, love, and father well.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
+        <a href="https://freddyja.github.io/pedro-woodcraft/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#8B5E3C;--c-bg:rgba(139,94,60,0.11)"
+           aria-label="Visit Pedro's Cuban Woodcraft (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">🪵</div>
+          <div class="card-cat">Custom Woodworking</div>
+          <div class="card-name">Pedro's Cuban<br>Woodcraft</div>
+          <p class="card-tagline">Hecho a mano con amor. — Handcrafted rockers &amp; tables by master carpenter Pedro Fernandez, Brooksville FL.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
 
-      <!-- ⑥ Pedro's Cuban Woodcraft -->
-      <a href="https://freddyja.github.io/pedro-woodcraft/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#8B5E3C;--c-bg:rgba(139,94,60,0.11)"
-         aria-label="Visit Pedro's Cuban Woodcraft (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">🪵</div>
-        <div class="card-cat">Custom Woodworking</div>
-        <div class="card-name">Pedro's Cuban<br>Woodcraft</div>
-        <p class="card-tagline">Hecho a mano con amor. — Handcrafted rockers &amp; tables by master carpenter Pedro Fernandez, Brooksville FL.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
-
-      <!-- ⑦ Frutas de Yuniert -->
-      <a href="https://freddyja.github.io/frutas-de-yuniert/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#2A8A38;--c-bg:rgba(42,138,56,0.10)"
-         aria-label="Visit Frutas de Yuniert (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">🥭</div>
-        <div class="card-cat">Fresh Produce</div>
-        <div class="card-name">Frutas<br>de Yuniert</div>
-        <p class="card-tagline">Sun-ripened tropical fruits delivered fresh — mangoes, coconuts, papaya &amp; more across Miami-Dade.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
-
-      <!-- ⑧ Brazilian Açaí -->
-      <a href="https://freddyja.github.io/brazilian-acai/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#7B2D8B;--c-bg:rgba(123,45,139,0.10)"
-         aria-label="Visit Brazilian Açaí (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">🫐</div>
-        <div class="card-cat">Food &amp; Beverages</div>
-        <div class="card-name">Brazilian<br>Açaí</div>
-        <p class="card-tagline">Fresh · Natural · Made with Love. — Customizable açaí bowls with fresh fruits &amp; toppings, delivery &amp; pickup.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
-
-      <!-- ⑨ Faithful Service Network -->
-      <a href="https://freddyja.github.io/faithful-service-network/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#2B4E9E;--c-bg:rgba(43,78,158,0.10)"
-         aria-label="Visit Faithful Service Network (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">✝️</div>
-        <div class="card-cat">Faith-Based Directory</div>
-        <div class="card-name">Faithful Service<br>Network</div>
-        <p class="card-tagline">Christian businesses supporting each other to serve customers better — browse, request quotes &amp; connect.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
-
-      <!-- ⑩ Kingdom Sisters -->
-      <a href="https://freddyja.github.io/kingdom-sisters/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#A0407A;--c-bg:rgba(160,64,122,0.10)"
-         aria-label="Visit Kingdom Sisters (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">🌸</div>
-        <div class="card-cat">Women's Faith Community</div>
-        <div class="card-name">Kingdom<br>Sisters</div>
-        <p class="card-tagline">She is clothed with strength &amp; dignity. — Scripture, weekly challenges, prayer requests &amp; fellowship for women of faith.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
-
-      <!-- ⑪ The Father's Charge -->
-      <a href="https://freddyja.github.io/fathers-charge/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#5A3E28;--c-bg:rgba(90,62,40,0.11)"
-         aria-label="Visit The Father's Charge (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">🛡️</div>
-        <div class="card-cat">Men's Faith Ministry</div>
-        <div class="card-name">The Father's<br>Charge</div>
-        <p class="card-tagline">Fathers of All Ages &amp; Stages Welcome. — Weekly scripture, discussion &amp; prayer equipping men to lead their families well.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
-
-      <!-- ⑫ Hannah's Creations -->
-      <a href="https://freddyja.github.io/hannah-creations/"
-         target="_blank" rel="noopener noreferrer"
-         class="app-card"
-         style="--c:#B07830;--c-bg:rgba(176,120,48,0.10)"
-         aria-label="Visit Hannah's Creations (opens in new tab)">
-        <div class="card-icon" aria-hidden="true">💎</div>
-        <div class="card-cat">Custom Jewelry</div>
-        <div class="card-name">Hannah's<br>Creations</div>
-        <p class="card-tagline">Handcrafted with faith. — Name necklaces, charm bracelets, birthstone pendants &amp; more. Ships in 3–5 days.</p>
-        <span class="card-cta">
-          Visit Site
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </span>
-      </a>
-
+      </div>
     </div>
+
+    <!-- ── FOOD & BEVERAGES ── -->
+    <div class="cat-section">
+      <h2 class="cat-heading">
+        🍽️ Food &amp; Beverages
+        <span class="cat-count">3 sites</span>
+      </h2>
+      <div class="app-grid">
+
+        <a href="https://freddyja.github.io/paella-de-yoansy/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#B7600A;--c-bg:rgba(183,96,10,0.11)"
+           aria-label="Visit La Paella de Yoansy (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">🥘</div>
+          <div class="card-cat">Food &amp; Catering</div>
+          <div class="card-name">La Paella<br>de Yoansy</div>
+          <p class="card-tagline">Spanish Soul. Cuban Heart. — Authentic handcrafted paella delivered in Spring Hill, FL.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+        <a href="https://freddyja.github.io/frutas-de-yuniert/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#2A8A38;--c-bg:rgba(42,138,56,0.10)"
+           aria-label="Visit Frutas de Yuniert (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">🥭</div>
+          <div class="card-cat">Fresh Produce</div>
+          <div class="card-name">Frutas<br>de Yuniert</div>
+          <p class="card-tagline">Sun-ripened tropical fruits delivered fresh — mangoes, coconuts, papaya &amp; more across Miami-Dade.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+        <a href="https://freddyja.github.io/brazilian-acai/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#7B2D8B;--c-bg:rgba(123,45,139,0.10)"
+           aria-label="Visit Brazilian Açaí (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">🫐</div>
+          <div class="card-cat">Food &amp; Beverages</div>
+          <div class="card-name">Brazilian<br>Açaí</div>
+          <p class="card-tagline">Fresh · Natural · Made with Love. — Customizable açaí bowls with fresh fruits &amp; toppings, delivery &amp; pickup.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── FAITH & COMMUNITY ── -->
+    <div class="cat-section">
+      <h2 class="cat-heading">
+        ✝️ Faith &amp; Community
+        <span class="cat-count">6 sites</span>
+      </h2>
+      <div class="app-grid">
+
+        <a href="https://freddyja.github.io/fire-and-fellowship/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#C0281C;--c-bg:rgba(192,40,28,0.10)"
+           aria-label="Visit Fire and Fellowship (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">🔥</div>
+          <div class="card-cat">Faith &amp; Community</div>
+          <div class="card-name">Fire and<br>Fellowship</div>
+          <p class="card-tagline">Household &amp; Headship. — Verses and prayers on a man's calling to lead, love, and father well.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+        <a href="https://freddyja.github.io/faithful-service-network/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#2B4E9E;--c-bg:rgba(43,78,158,0.10)"
+           aria-label="Visit Faithful Service Network (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">✝️</div>
+          <div class="card-cat">Faith-Based Directory</div>
+          <div class="card-name">Faithful Service<br>Network</div>
+          <p class="card-tagline">Christian businesses supporting each other to serve customers better — browse, request quotes &amp; connect.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+        <a href="https://freddyja.github.io/kingdom-sisters/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#A0407A;--c-bg:rgba(160,64,122,0.10)"
+           aria-label="Visit Kingdom Sisters (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">🌸</div>
+          <div class="card-cat">Women's Faith Community</div>
+          <div class="card-name">Kingdom<br>Sisters</div>
+          <p class="card-tagline">She is clothed with strength &amp; dignity. — Scripture, weekly challenges, prayer requests &amp; fellowship for women of faith.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+        <a href="https://freddyja.github.io/fathers-charge/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#5A3E28;--c-bg:rgba(90,62,40,0.11)"
+           aria-label="Visit The Father's Charge (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">🛡️</div>
+          <div class="card-cat">Men's Faith Ministry</div>
+          <div class="card-name">The Father's<br>Charge</div>
+          <p class="card-tagline">Fathers of All Ages &amp; Stages Welcome. — Weekly scripture, discussion &amp; prayer equipping men to lead their families well.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+        <a href="https://freddyja.github.io/60-Seconds-in-the-Word-for-women/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#7A3350;--c-bg:rgba(122,51,80,0.10)"
+           aria-label="Visit 60 Seconds in the Word for Women (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">📖</div>
+          <div class="card-cat">Daily Devotional · Women</div>
+          <div class="card-name">60 Seconds in<br>the Word — Sisters</div>
+          <p class="card-tagline">A minute with the Word, sister. — One-minute daily devotionals for Kingdom Sisters in English, Spanish &amp; Portuguese.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+        <a href="https://freddyja.github.io/60-seconds-in-the-word/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#8A3324;--c-bg:rgba(138,51,36,0.10)"
+           aria-label="Visit 60 Seconds in the Word (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">📖</div>
+          <div class="card-cat">Daily Devotional · Men</div>
+          <div class="card-name">60 Seconds in<br>the Word — Brothers</div>
+          <p class="card-tagline">A minute with the Word, brother. — One-minute daily devotionals for Fire Fellowship in English, Spanish &amp; Portuguese.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── ARTISAN & CREATIVE ── -->
+    <div class="cat-section">
+      <h2 class="cat-heading">
+        ✨ Creative
+        <span class="cat-count">1 site</span>
+      </h2>
+      <div class="app-grid">
+
+        <a href="https://freddyja.github.io/hannah-creations/"
+           target="_blank" rel="noopener noreferrer"
+           class="app-card"
+           style="--c:#B07830;--c-bg:rgba(176,120,48,0.10)"
+           aria-label="Visit Hannah's Creations (opens in new tab)">
+          <div class="card-icon" aria-hidden="true">💎</div>
+          <div class="card-cat">Custom Jewelry</div>
+          <div class="card-name">Hannah's<br>Creations</div>
+          <p class="card-tagline">Handcrafted with faith. — Name necklaces, charm bracelets, birthstone pendants &amp; more. Ships in 3–5 days.</p>
+          <span class="card-cta">Visit Site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <span class="footer-wordmark">Freddy's App Central</span>
-    <span class="footer-note">Twelve websites. Built with care. &copy; 2026</span>
+    <span class="footer-note">Fourteen websites. Built with care. &copy; 2026</span>
   </footer>
 
 </body>
